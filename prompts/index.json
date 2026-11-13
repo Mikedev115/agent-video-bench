@@ -663,6 +663,450 @@
         ]
       },
       "file": "architecture/18-impossible-maze.md"
+    },
+    {
+      "id": "19",
+      "slug": "newtons-cradle",
+      "track": "rigid-body",
+      "source": "Gemini",
+      "title": {
+        "en": "Chrome Newton's cradle momentum transfer",
+        "th": "เปลนิวตันโครมเมียมและการส่งผ่านโมเมนตัม"
+      },
+      "measures": {
+        "en": "Momentum transfer and elastic collision, gated by a determinism check",
+        "th": "วัดการส่งผ่านโมเมนตัม การชนแบบ elastic และการตรวจผลด้วย determinism gate"
+      },
+      "tags": [
+        "Rapier",
+        "Restitution",
+        "Contact flash",
+        "Macro DOF"
+      ],
+      "output": "newtons_cradle.mp4",
+      "duration": 12,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does sphere 7 fail to fly out, or leave at less than 50 degrees?",
+          "Do the spheres keep jittering at rest, or sit at uneven spacing so they collide forever?",
+          "Is the contact shockwave missing, or do the chrome highlights flash off-beat from the impact?"
+        ],
+        "th": [
+          "ลูกสุดท้ายไม่กระเด็นหลังชน (โมเมนตัมไม่ส่งต่อถึงลูกที่ 7) หรือมุมที่กระเด็นไม่ถึง 50 องศา",
+          "ลูกบอลสั่นค้างตอนนิ่ง หรือระยะห่างไม่เท่ากันจนชนกันตลอดเวลา",
+          "ไม่มี shockwave ที่จุดชน หรือไฮไลต์โครมเด้งผิดจังหวะกับการชน"
+        ]
+      },
+      "file": "rigid-body/19-newtons-cradle.md"
+    },
+    {
+      "id": "20",
+      "slug": "engine-4stroke",
+      "track": "mechanics",
+      "source": "Gemini",
+      "title": {
+        "en": "Inline-4 turbo engine cutaway cycle",
+        "th": "เครื่องยนต์ 4 สูบตัดเปิดและจังหวะ 4 จังหวะ"
+      },
+      "measures": {
+        "en": "Valve timing, firing order and crank motion, asserted every single frame",
+        "th": "วัดความแม่นยำเชิงกล (จังหวะวาล์ว ลำดับจุดระเบิด ข้อเหวี่ยง) ที่ต้องยืนยันด้วยการ assert ทุกเฟรม"
+      },
+      "tags": [
+        "Valve timing",
+        "Firing order",
+        "Translucent PBR",
+        "Technical camera"
+      ],
+      "output": "engine_cycle.mp4",
+      "duration": 15,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the valves ignore the 1-3-4-2 firing order, or stay open outside their own lobe window?",
+          "Does a piston leave its bore, does a rod detach from the crank, or does a piston hit a valve?",
+          "Does the gas colour fail to follow the stroke, or change later than the piston does?"
+        ],
+        "th": [
+          "จังหวะวาล์วไม่ตรงลำดับจุดระเบิด 1-3-4-2 หรือวาล์วเปิดค้างนอกช่วง lobe ของตัวเอง",
+          "ลูกสูบโผล่พ้นกระบอก ก้านสูบหลุดจากข้อเหวี่ยง หรือลูกสูบชนวาล์ว",
+          "สีแก๊สในกระบอกไม่เปลี่ยนตามจังหวะ (ดูด อัด ระเบิด คาย) หรือเปลี่ยนช้ากว่าลูกสูบ"
+        ]
+      },
+      "file": "mechanics/20-engine-4stroke.md"
+    },
+    {
+      "id": "21",
+      "slug": "kinetic-facade",
+      "track": "architecture",
+      "source": "Gemini",
+      "title": {
+        "en": "Kinetic facade tracking the sun",
+        "th": "อาคารบานเกล็ดจลน์ที่ติดตามดวงอาทิตย์"
+      },
+      "measures": {
+        "en": "360 louver modules driven by the sun dot product, with collision-free folding",
+        "th": "วัดการคำนวณมุมบานเกล็ด 360 ชุดจาก dot product กับเวกเตอร์ดวงอาทิตย์ พร้อมการชนกันของบาน"
+      },
+      "tags": [
+        "Instanced rigging",
+        "Solar vector",
+        "Hinged panels",
+        "Shadow study"
+      ],
+      "output": "kinetic_facade.mp4",
+      "duration": 14,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do all louvers open and close in unison instead of varying with their own sun exposure?",
+          "Do closed louvers collide with or pass through each other, or through the glass behind them?",
+          "Does the plaza shadow stay put while the sun moves?"
+        ],
+        "th": [
+          "บานเกล็ดเปิด-ปิดพร้อมกันหมดแทนที่จะต่างกันตามทิศที่โดนแดด",
+          "บานที่ปิดสนิทชนหรือทะลุกันเอง หรือทะลุกระจกด้านหลัง",
+          "เงาบนลานหน้าอาคารไม่ขยับตามการเคลื่อนของดวงอาทิตย์"
+        ]
+      },
+      "file": "architecture/21-kinetic-facade.md"
+    },
+    {
+      "id": "22",
+      "slug": "prism-optics",
+      "track": "shader",
+      "source": "Gemini",
+      "title": {
+        "en": "Dispersion prism and caustics lab",
+        "th": "ปริซึมกระจายแสงและ caustics บนโต๊ะทดลอง"
+      },
+      "measures": {
+        "en": "Wavelength-dependent Snell refraction over 16 bands, with a NaN scan",
+        "th": "วัดการเขียน Snell's law ตามความยาวคลื่นจริง (16 แถบ) และการสแกนหา NaN"
+      },
+      "tags": [
+        "Spectral refraction",
+        "Volumetrics",
+        "Caustics",
+        "Bloom"
+      ],
+      "output": "prism_optics.mp4",
+      "duration": 12,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Is the spectrum flat and banded instead of continuous (RGB standing in for 16 bands)?",
+          "Do all wavelengths bend the same amount, or refocus to the wrong spot on the screen?",
+          "Do the caustics flicker frame to frame, or show black and white NaN speckles?"
+        ],
+        "th": [
+          "สเปกตรัมเป็นแถบสีแบน ๆ ไม่ต่อเนื่อง (ใช้ RGB 3 แทน 16 แถบ)",
+          "สีแต่ละความยาวคลื่นหักเหมุมเท่ากัน หรือรวมกลับผิดตำแหน่งบนฉากรับแสง",
+          "จุด caustics กระพริบเป็นช่วง ๆ หรือมีจุดขาวดำจาก NaN"
+        ]
+      },
+      "file": "shader/22-prism-optics.md"
+    },
+    {
+      "id": "23",
+      "slug": "black-hole-lensing",
+      "track": "shader",
+      "source": "Gemini",
+      "title": {
+        "en": "Relativistic black hole lensing",
+        "th": "หลุมดำและการหักเหแสงเชิงสัมพัทธภาพ"
+      },
+      "measures": {
+        "en": "Curved null-geodesic integration around a Schwarzschild horizon, in GLSL",
+        "th": "วัดการอินทิเกรตวิถีแสงโค้งในเรขาคณิต Schwarzschild ด้วย GLSL raymarching"
+      },
+      "tags": [
+        "Geodesic RK4",
+        "Accretion disk",
+        "Doppler beaming",
+        "Volumetric noise"
+      ],
+      "output": "black_hole.mp4",
+      "duration": 15,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Is the shadow non-circular, or does its radius drift away from the Schwarzschild ~2.6 Rs?",
+          "Is the Einstein ring broken, with light from behind failing to arc over the top and bottom?",
+          "Does the starfield stay undistorted as the camera moves, or the disk spin the wrong way with Doppler inverted?"
+        ],
+        "th": [
+          "เงามืดของหลุมดำไม่กลม หรือรัศมีไม่คงที่ตามที่ Schwarzschild ให้ (~2.6 Rs)",
+          "แหวน Einstein ขาด ตอนแสงจากด้านหลังไม่โค้งข้ามขอบบนและล่าง",
+          "ดวงดาวพื้นหลังไม่บิดเบี้ยวเมื่อกล้องเคลื่อน หรือจาน accretions หมุนผิดข้างและ Doppler กลับสี"
+        ]
+      },
+      "file": "shader/23-black-hole-lensing.md"
+    },
+    {
+      "id": "24",
+      "slug": "abyssal-ecosystem",
+      "track": "world",
+      "source": "Gemini",
+      "title": {
+        "en": "Bioluminescent abyssal ecosystem",
+        "th": "ระบบนิเวศก้นทะเลลึกที่เรืองแสงชีวภาพ"
+      },
+      "measures": {
+        "en": "A deep-sea scene built on particles, volumetric god-rays and vertex deformation",
+        "th": "วัดฉากใหญ่ใต้ทะเลที่ขับเคลื่อนด้วยอนุภาค แสง volumetric และการเปลี่ยนรูปจาก vertex shader"
+      },
+      "tags": [
+        "Volumetric fog",
+        "Vertex deformation",
+        "Bioluminescence",
+        "Particle drift"
+      ],
+      "output": "abyssal_reef.mp4",
+      "duration": 16,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the jellyfish fail to contract along their sinusoid, or pulse in perfect unison like copies?",
+          "Are the ROV god-rays missing, or flattened into flat planes instead of volumes?",
+          "Does the marine snow stick to the screen instead of drifting past as the camera moves?"
+        ],
+        "th": [
+          "แมงกะพรุนไม่หด-ขยายตาม sinusoid หรือทั้งฝูงเต้นพร้อมกันเป๊ะจนดูเหมือน copy",
+          "ไม่มี god-ray / volumetric จากไฟ ROV หรือลำแสงแบนเป็นแผ่น",
+          "marine snow นิ่งติดจอแทนที่จะลอยผ่านตามการเคลื่อนของกล้อง"
+        ]
+      },
+      "file": "world/24-abyssal-ecosystem.md"
+    },
+    {
+      "id": "25",
+      "slug": "subsea-cables",
+      "track": "world",
+      "source": "Gemini",
+      "title": {
+        "en": "Subsea cable traffic and outage reroute",
+        "th": "สายเคเบิลใต้ทะเลและเส้นทางสำรองเมื่อสายขาด"
+      },
+      "measures": {
+        "en": "Geospatial data-viz with staged events, where the HUD must match the simulation",
+        "th": "วัด data-viz เชิงพื้นที่พร้อมเหตุการณ์เป็นช่วง และตัวเลข HUD ที่ต้องตรงกับสถานะจริง"
+      },
+      "tags": [
+        "Great-circle splines",
+        "Packet pulses",
+        "Event staging",
+        "HUD telemetry"
+      ],
+      "output": "subsea_cables.mp4",
+      "duration": 18,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the cables float off the globe's surface or sink into it?",
+          "Do packets keep flowing on a severed cable, or fail to move onto the alternate routes?",
+          "Does the HUD (latency, throughput) stay flat, or disagree with the logged values?"
+        ],
+        "th": [
+          "สายเคเบิลลอยพ้นผิวโลกหรือจมทะลุเข้าไปในลูกโลก",
+          "แพ็กเก็ตวิ่งขาดตอนหรือไม่หยุดเมื่อสายถูกตัด และไม่ย้ายไปเส้นทางสำรอง",
+          "ตัวเลขบน HUD (latency, throughput) ไม่เปลี่ยนตามเหตุการณ์ หรือไม่ตรงกับค่าที่บันทึกไว้"
+        ]
+      },
+      "file": "world/25-subsea-cables.md"
+    },
+    {
+      "id": "26",
+      "slug": "pathfinding-race",
+      "track": "world",
+      "source": "Gemini",
+      "title": {
+        "en": "A* versus Dijkstra pathfinding race",
+        "th": "แข่งอัลกอริทึมหาเส้นทางในเขาวงกต 3 มิติ"
+      },
+      "measures": {
+        "en": "Real graph search on a 3D grid, with the visuals bound to the true visited counts",
+        "th": "วัดการทำอัลกอริทึมจริงบนกริด 3 มิติ และภาพที่ต้องสะท้อนจำนวนโหนดที่เยี่ยมชมตามจริง"
+      },
+      "tags": [
+        "Dijkstra",
+        "A*",
+        "Volumetric voxels",
+        "HUD counters"
+      ],
+      "output": "pathfinding_race.mp4",
+      "duration": 15,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do A* and Dijkstra visit the same number of nodes, meaning the heuristic does nothing?",
+          "Does the returned path cut through walls, or run longer than the computed optimum?",
+          "Do the on-screen counters disagree with the number of voxels actually drawn?"
+        ],
+        "th": [
+          "A* กับ Dijkstra เยี่ยมชมจำนวนโหนดเท่ากัน (heuristic ไม่ได้ทำงานหรือไม่ admissible)",
+          "เส้นทางที่ได้ตัดผ่านกำแพง หรือยาวกว่าค่า optimal ที่คำนวณไว้",
+          "ตัวนับโหนดบนจอไม่ตรงกับจำนวน voxel ที่ขึ้นจริงในเฟรม"
+        ]
+      },
+      "file": "world/26-pathfinding-race.md"
+    },
+    {
+      "id": "27",
+      "slug": "terrarium-succession",
+      "track": "world",
+      "source": "Gemini",
+      "title": {
+        "en": "Terrarium ecological succession",
+        "th": "ภาชนะแก้วก้นจัตุรัสและลำดับการเติบโตของระบบนิเวศ"
+      },
+      "measures": {
+        "en": "Procedural growth in staged order, never skipping a stage nor breaching the container",
+        "th": "วัดการเติบโตแบบ procedural ตามช่วงเวลา (L-system) ที่ต้องไม่ข้ามลำดับและไม่ทะลุขอบภาชนะ"
+      },
+      "tags": [
+        "L-system",
+        "Cross-section",
+        "Staged growth",
+        "Volumetric light"
+      ],
+      "output": "terrarium_succession.mp4",
+      "duration": 20,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do trees appear before the soil thickens, or does stage 3 start before stage 2 finishes?",
+          "Do roots or branches grow through the glass?",
+          "Does the leaf and shoot count fail to increase over time, or is the final canopy missing its volumetric light shafts?"
+        ],
+        "th": [
+          "ต้นไม้โผล่ก่อนชั้นดินจะหนา หรือขั้นที่ 2 ยังไม่จบขั้นที่ 3 เริ่มแล้ว",
+          "รากหรือง่ากทะลุออกนอกกล่องแก้ว",
+          "จำนวนใบ/ยอดไม่เพิ่มขึ้นตามเวลา หรือฉากจบไม่มีเรย์แสง volumetric จากหลังคาป่า"
+        ]
+      },
+      "file": "world/27-terrarium-succession.md"
+    },
+    {
+      "id": "28",
+      "slug": "quadruped-trot",
+      "track": "rig",
+      "source": "Aetox",
+      "title": {
+        "en": "Quadruped trot with planted-foot IK",
+        "th": "สัตว์สี่ขาสามมิติวิ่งเหยาะด้วย IK ที่ไม่ไถล"
+      },
+      "measures": {
+        "en": "A 24-bone rig, diagonal-pair trot, and feet that stay planted to the millimetre",
+        "th": "วัดโครงกระดูก 24 กระดูก, ท่า trot แบบคู่ทแยง และการยึดเท้ากับพื้นจนถึงระดับมิลลิเมตร"
+      },
+      "tags": [
+        "Skeleton",
+        "Two-bone IK",
+        "Duty factor",
+        "Spine undulation"
+      ],
+      "output": "quadruped_trot.mp4",
+      "duration": 12,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the feet slide during stance, or do the diagonal pairs fail to alternate in a trot?",
+          "Do feet sink below the ground or float above it while they should be planted?",
+          "Does the spine fail to compress and extend with the stride, or the tail stay rigid instead of lagging?"
+        ],
+        "th": [
+          "เท้าไถลบนพื้นระหว่างช่วง stance หรือขาคู่ทแยงไม่สลับจังหวะกันแบบ trot",
+          "เท้าจมลงใต้พื้นหรือลอยเหนือพื้นตอนควรจะยึดอยู่",
+          "กระดูกสันหลังไม่ยุบ-ยืดตามจังหวะ หรือหางแข็งไม่หน่วงตามการเคลื่อน"
+        ]
+      },
+      "file": "rig/28-quadruped-trot.md"
+    },
+    {
+      "id": "29",
+      "slug": "drum-machine",
+      "track": "audio",
+      "source": "Aetox",
+      "title": {
+        "en": "Drum machine struck by its own audio",
+        "th": "เครื่องกลองที่ตีตรงจังหวะเสียงของตัวเอง"
+      },
+      "measures": {
+        "en": "Frame-accurate audio/visual sync through one shared event list",
+        "th": "วัดการซิงก์เสียงกับภาพระดับเฟรม ผ่าน event list ชุดเดียวที่ทั้งเสียงและหุ่นยนต์ใช้ร่วมกัน"
+      },
+      "tags": [
+        "WAV synthesis",
+        "Onset alignment",
+        "FFmpeg mux",
+        "Clipping check"
+      ],
+      "output": "drum_machine.mp4",
+      "duration": 16,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the sticks strike off the beat (off by more than one frame, 33 ms)?",
+          "Is the MP4 missing an audio track, or are audio and video durations mismatched?",
+          "Does the sound clip because the waveform exceeds [-1.0, 1.0]?"
+        ],
+        "th": [
+          "ค้อนหรือนิ้วตีไม่ตรงจังหวะเสียง (คลาดเกิน 1 เฟรม หรือ 33 ms)",
+          "ไฟล์ MP4 ไม่มีแทร็กเสียง หรือความยาวเสียงกับภาพไม่ตรงกัน",
+          "เสียงแตกเพราะ waveform เกิน [-1.0, 1.0] หรือ peak ทะลุ 0 dBFS"
+        ]
+      },
+      "file": "audio/29-drum-machine.md"
+    },
+    {
+      "id": "30",
+      "slug": "granular-hourglass",
+      "track": "soft-and-fluid",
+      "source": "Aetox",
+      "title": {
+        "en": "Granular hourglass with conserved grains",
+        "th": "นาฬิกาทรายและเม็ดทราย 20,000 เม็ดที่ต้องไม่หาย"
+      },
+      "measures": {
+        "en": "A granular solver that conserves grains, holds the angle of repose and never tunnels",
+        "th": "วัดตัวแก้ granular ที่ต้องคงจำนวนเม็ด มุมเทของกองทราย และการไม่ทะลุกระจก"
+      },
+      "tags": [
+        "DEM",
+        "Friction",
+        "Angle of repose",
+        "Particle budget"
+      ],
+      "output": "granular_hourglass.mp4",
+      "duration": 15,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does the grain count drop during the run (grains escaping or silently deleted)?",
+          "Do grains tunnel through the glass to the outside?",
+          "Does the pile flatten out or keep flowing forever because internal friction is missing?"
+        ],
+        "th": [
+          "จำนวนเม็ดทรายลดลงระหว่างรัน (เม็ดหลุดหรือถูกลบเงียบ ๆ)",
+          "เม็ดทรายทะลุผนังกระจกออกไปนอกนาฬิกา",
+          "กองทรายราบแบนหรือไหลไม่หยุด เพราะไม่มีแรงเสียดทานภายใน"
+        ]
+      },
+      "file": "soft-and-fluid/30-granular-hourglass.md"
     }
   ]
 }

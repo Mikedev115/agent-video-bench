@@ -8,10 +8,10 @@
   const I18N = {
     th: {
       title: 'Agent Video Bench — พรอมป์ที่บังคับให้เอเจนต์เรนเดอร์วิดีโอจริง',
-      eyebrow: '18 พรอมป์ · เรนเดอร์จริง · ตรวจได้ทีละเฟรม',
+      eyebrow: '30 พรอมป์ · เรนเดอร์จริง · ตรวจได้ทีละเฟรม',
       h1: 'พรอมป์ที่บังคับให้เอเจนต์<br>เรนเดอร์วิดีโอจริง',
-      lede: 'สิบแปดโจทย์ แยกตามสายทักษะ แต่ละตัวบังคับผลลัพธ์เป็นไฟล์ MP4 ที่เปิดตรวจทีละเฟรมได้ พร้อม “จุดจับผิด” บอกไว้ว่าให้ไปดูอะไร เพื่อจับงานที่ดูดีแต่ผิดจริง',
-      stats: ['<b>18</b> พรอมป์', '<b>08</b> สายทักษะ', '<b>30</b> FPS ล็อกตายตัว', '<b>0</b> แอสเซ็ตภายนอก'],
+      lede: 'สามสิบโจทย์ แยกตามสายทักษะ แต่ละตัวบังคับผลลัพธ์เป็นไฟล์ MP4 ที่เปิดตรวจทีละเฟรมได้ พร้อม “จุดจับผิด” และ gate ที่ต้องผ่าน (determinism, temporal, ffprobe) ก่อนส่งงาน',
+      stats: ['<b>30</b> พรอมป์', '<b>08</b> สายทักษะ', '<b>30</b> FPS ล็อกตายตัว', '<b>0</b> แอสเซ็ตภายนอก'],
       howH: 'วิธีใช้',
       steps: [
         '<b>เลือกโจทย์</b> การ์ดแต่ละใบบอกไฟล์ผลลัพธ์ ความยาว และสิ่งที่ถูกวัด',
@@ -47,10 +47,10 @@
     },
     en: {
       title: 'Agent Video Bench — prompts that force an agent to render real video',
-      eyebrow: '18 prompts · real renders · checkable frame by frame',
+      eyebrow: '30 prompts · real renders · checkable frame by frame',
       h1: 'Prompts that force an agent<br>to render actual video',
-      lede: 'Eighteen jobs grouped by the skill each one measures. Every prompt demands an MP4 you can inspect frame by frame, and ships a “what to catch” list for the ways an agent fakes it.',
-      stats: ['<b>18</b> prompts', '<b>08</b> skill tracks', '<b>30</b> FPS locked', '<b>0</b> external assets'],
+      lede: 'Thirty jobs grouped by the skill each one measures. Every prompt demands an MP4 you can inspect frame by frame, ships a “what to catch” list, and names the gates a run must pass - determinism, temporal variance, ffprobe - before it counts as done.',
+      stats: ['<b>30</b> prompts', '<b>08</b> skill tracks', '<b>30</b> FPS locked', '<b>0</b> external assets'],
       howH: 'How to use',
       steps: [
         '<b>Pick a job</b> — each card names the output file, its length and what it measures',

@@ -1,10 +1,12 @@
 # Agent Video Bench
 
-**18 prompts that force a coding agent to render real 3D video** — not to describe it, not to ship a mock, but to produce an `.mp4` you can open and inspect frame by frame.
+**30 prompts that force a coding agent to render real 3D video** — not to describe it, not to ship a mock, but to produce an `.mp4` you can open and inspect frame by frame.
 
 *คลังพรอมป์สำหรับสั่งเอเจนต์สร้างวิดีโอ 3 มิติแบบ procedural พร้อม "จุดจับผิด" ที่บอกว่าให้ไปดูอะไรในไฟล์ผลลัพธ์*
 
 Every prompt demands the same discipline: everything procedural (no external models, textures or audio), a deterministic clock (`t = frame / 30`), a headless browser writing lossless frames, FFmpeg encoding H.264/yuv420p, and a self-check on extracted keyframes. Each card on the site lists the failures that actually happen — clipped gear teeth, a domino chain that stalls, blooming that blows the frame white, kick drums that drift out of sync.
+
+From prompt 19 onward each one also names its **gates**: a determinism check (same seed, identical frame hash), a temporal-variance check that rejects frozen or black frames, and an ffprobe contract on duration, resolution and pixel format. A run that looks fine but never moved cannot pass, and the prompt says to re-render rather than ship.
 
 **Browse the set: https://mikedev115.github.io/agent-video-bench/**
 
@@ -30,6 +32,18 @@ Every prompt demands the same discipline: everything procedural (no external mod
 | 16 | architecture | [Parametric suspension bridge](prompts/architecture/16-suspension-bridge.md) | `suspension_bridge.mp4` | 17s |
 | 17 | architecture | [Orbital station assembly](prompts/architecture/17-orbital-station.md) | `orbital_station.mp4` | 18s |
 | 18 | architecture | [Impossible Escher architecture](prompts/architecture/18-impossible-maze.md) | `impossible_maze.mp4` | 16s |
+| 19 | rigid-body | [Chrome Newton's cradle](prompts/rigid-body/19-newtons-cradle.md) | `newtons_cradle.mp4` | 12s |
+| 20 | mechanics | [Inline-4 turbo engine cutaway](prompts/mechanics/20-engine-4stroke.md) | `engine_cycle.mp4` | 15s |
+| 21 | architecture | [Kinetic facade tracking the sun](prompts/architecture/21-kinetic-facade.md) | `kinetic_facade.mp4` | 14s |
+| 22 | shader | [Dispersion prism and caustics](prompts/shader/22-prism-optics.md) | `prism_optics.mp4` | 12s |
+| 23 | shader | [Relativistic black hole lensing](prompts/shader/23-black-hole-lensing.md) | `black_hole.mp4` | 15s |
+| 24 | world | [Bioluminescent abyssal ecosystem](prompts/world/24-abyssal-ecosystem.md) | `abyssal_reef.mp4` | 16s |
+| 25 | world | [Subsea cable traffic and reroute](prompts/world/25-subsea-cables.md) | `subsea_cables.mp4` | 18s |
+| 26 | world | [A* vs Dijkstra pathfinding race](prompts/world/26-pathfinding-race.md) | `pathfinding_race.mp4` | 15s |
+| 27 | world | [Terrarium ecological succession](prompts/world/27-terrarium-succession.md) | `terrarium_succession.mp4` | 20s |
+| 28 | rig | [Quadruped trot with planted-foot IK](prompts/rig/28-quadruped-trot.md) | `quadruped_trot.mp4` | 12s |
+| 29 | audio | [Drum machine struck by its own audio](prompts/audio/29-drum-machine.md) | `drum_machine.mp4` | 16s |
+| 30 | soft-and-fluid | [Granular hourglass, conserved grains](prompts/soft-and-fluid/30-granular-hourglass.md) | `granular_hourglass.mp4` | 15s |
 
 **Tracks:** `mechanics` (gear trains, spatial math) · `rigid-body` (physics engine, chain reactions) · `soft-and-fluid` (cloth, soft bodies, particles, heightfields) · `shader` (hand-written GLSL, SDF raymarching) · `world` (instancing, post-processing, spline flight) · `architecture` (procedural structures, pivots, assembly order) · `rig` (skinning, IK, contact) · `audio` (synthesis, FFT, muxing)
 
@@ -99,5 +113,7 @@ Opening `index.html` straight from disk will not work: the page fetches `prompts
 - Prompts 01–05 were written by **Gemini**, passed on by Mike.
 - Prompts 06–08 and the library structure were written for this repo.
 - Prompts 09–18 were written by **Gemini**, passed on by Mike.
+- Prompts 19–27 were drafted by **Gemini** and rewritten here: 30 FPS instead of 60, Three.js only (no Blender escape hatch), `t = frame / 30` with one seeded PRNG, and the gates above added.
+- Prompts 28–30 were written for this repo to cover rig, audio and granular gaps.
 
 The prompt texts are kept verbatim so a result can be compared against the same wording everyone else ran. MIT licensed — copy, fork, translate, add your own.
