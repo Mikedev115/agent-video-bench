@@ -1,0 +1,15 @@
+{
+  "name": "agent-video-bench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "18 prompts that make a coding agent render real deterministic 3D video with Three.js and FFmpeg.",
+  "scripts": {
+    "build": "node scripts/build-index.mjs",
+    "check": "node scripts/build-index.mjs --check",
+    "start": "node scripts/serve.mjs"
+  },
+  "keywords": ["prompts", "threejs", "ffmpeg", "video-generation", "agent-benchmark", "webgl"],
+  "license": "MIT",
+  "author": "Chayapol Promsawana (Mikedev115)"
+}

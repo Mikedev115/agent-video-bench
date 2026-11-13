@@ -1,0 +1,668 @@
+{
+  "repo": "agent-video-bench",
+  "version": 1,
+  "updated": "2026-11-13",
+  "note": "Generated from the front matter of prompts/<track>/*.md by scripts/build-index.mjs. Edit the .md files, not this file.",
+  "items": [
+    {
+      "id": "01",
+      "slug": "tourbillon",
+      "track": "mechanics",
+      "source": "Gemini",
+      "title": {
+        "en": "Tourbillon movement",
+        "th": "กลไกนาฬิกา Tourbillon"
+      },
+      "measures": {
+        "en": "3D spatial reasoning and gear-train ratios",
+        "th": "วัดความแม่นยำคณิตศาสตร์ 3 มิติ & อัตราทดเฟือง"
+      },
+      "tags": [
+        "Three.js",
+        "Kinematics",
+        "PBR",
+        "Macro"
+      ],
+      "output": "tourbillon.mp4",
+      "duration": 15,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "In the macro frame, do the gear teeth overlap (clip) instead of meshing?",
+          "Do the shadows land correctly on the plate, and do the gears turn the way physics says?"
+        ],
+        "th": [
+          "ดูจังหวะฟันเฟืองที่ขบกันในเฟรม Macro ว่าฟันเฟืองซ้อนทับ (Clip) กันหรือไม่",
+          "ดูเงาตกกระทบบนแผ่นเพลทโลหะ และทิศทางการหมุนว่าตรงกับหลักฟิสิกส์หรือไม่"
+        ]
+      },
+      "file": "mechanics/01-tourbillon.md"
+    },
+    {
+      "id": "02",
+      "slug": "rube-goldberg",
+      "track": "rigid-body",
+      "source": "Gemini",
+      "title": {
+        "en": "Rube Goldberg chain",
+        "th": "เครื่องจักรลูกโซ่ Rube Goldberg"
+      },
+      "measures": {
+        "en": "Physics engine integration and a tracking camera",
+        "th": "วัดการผสาน Physics Engine & กล้องติดตาม"
+      },
+      "tags": [
+        "Rapier",
+        "cannon-es",
+        "Fixed timestep",
+        "Camera rig"
+      ],
+      "output": "rube_goldberg.mp4",
+      "duration": 18,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the dominoes fall all the way to the last one?",
+          "Does the lever throw the sphere far enough to reach the bridge?",
+          "Does the camera lose the action and let it leave the frame?"
+        ],
+        "th": [
+          "โดมิโนล้มไม่ถึงตัวสุดท้าย",
+          "คานกระดกดีดลูกบอลไม่ถึงสะพาน",
+          "กล้องตามวัตถุไม่ทันจนหลุดเฟรม"
+        ]
+      },
+      "file": "rigid-body/02-rube-goldberg.md"
+    },
+    {
+      "id": "03",
+      "slug": "raymarch-morph",
+      "track": "shader",
+      "source": "Gemini",
+      "title": {
+        "en": "Fractal raymarch morph",
+        "th": "โลหะเหลวเปลี่ยนรูปด้วย Raymarching Fractal"
+      },
+      "measures": {
+        "en": "Hand-written GLSL and advanced lighting",
+        "th": "วัดการเขียน GLSL Shader & แสงเงาขั้นสูง"
+      },
+      "tags": [
+        "GLSL",
+        "SDF",
+        "Raymarching",
+        "WebGL2"
+      ],
+      "output": "raymarch_morph.mp4",
+      "duration": 15,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Are object edges stair-stepped (raymarching step artifacts)?",
+          "Do reflections break into black or white speckles (NaN values)?",
+          "Does the camera fly into the surface until the frame goes black?"
+        ],
+        "th": [
+          "ขอบวัตถุเป็นขั้นบันได (Raymarching step artifact)",
+          "แสงสะท้อนแตกเป็นจุดขาวดำ (NaN values)",
+          "กล้องพุ่งทะลุเข้าไปในเนื้อวัตถุจนจอมืด"
+        ]
+      },
+      "file": "shader/03-raymarch-morph.md"
+    },
+    {
+      "id": "04",
+      "slug": "cyberpunk-flythrough",
+      "track": "world",
+      "source": "Gemini",
+      "title": {
+        "en": "Cyberpunk megacity flythrough",
+        "th": "บินสำรวจมหานคร Cyberpunk ยามค่ำคืน"
+      },
+      "measures": {
+        "en": "Large-scene optimisation and post-processing",
+        "th": "วัดการจัดการ Scene ขนาดใหญ่ & Post-Processing"
+      },
+      "tags": [
+        "InstancedMesh",
+        "Bloom",
+        "Spline",
+        "Canvas2D"
+      ],
+      "output": "cyberpunk_flythrough.mp4",
+      "duration": 16,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does the camera fly through a building?",
+          "Is the bloom blown out until the whole frame is white?",
+          "Does the frame rate drop far enough to make the motion stutter?"
+        ],
+        "th": [
+          "กล้องบินทะลุตึก",
+          "แสง Bloom ฟุ้งจนขาวโพลนทั้งจอ",
+          "เฟรมเรตตกจนภาพกระตุกหากเอเจนไม่ได้ล็อกเวลาแบบ Deterministic"
+        ]
+      },
+      "file": "world/04-cyberpunk-flythrough.md"
+    },
+    {
+      "id": "05",
+      "slug": "audio-vortex",
+      "track": "audio",
+      "source": "Gemini",
+      "title": {
+        "en": "Audio-reactive particle symphony",
+        "th": "ซิมโฟนีอนุภาค 3 มิติซิงก์จังหวะเสียงสังเคราะห์"
+      },
+      "measures": {
+        "en": "A full audio + video pipeline in one run",
+        "th": "วัดการคุม Pipeline เสียง + ภาพครบวงจร"
+      },
+      "tags": [
+        "WAV synthesis",
+        "FFT",
+        "GPU particles",
+        "FFmpeg mux"
+      ],
+      "output": "audio_vortex.mp4",
+      "duration": 15,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does the picture lag behind the kick drum?",
+          "Is the MP4 missing its audio track?",
+          "Does the sound clip because the waveform goes past [-1.0, 1.0]?"
+        ],
+        "th": [
+          "ภาพกับเสียงดีเลย์ไม่ตรงจังหวะ Kick",
+          "ไฟล์ MP4 ไม่มีเสียงติดมาด้วย",
+          "เสียงแตก (Clipping) จากการคำนวณ Waveform เกิน [-1.0, 1.0]"
+        ]
+      },
+      "file": "audio/05-audio-vortex.md"
+    },
+    {
+      "id": "06",
+      "slug": "cloth-drape",
+      "track": "soft-and-fluid",
+      "source": "Aetox",
+      "title": {
+        "en": "Silk cloth over an armature",
+        "th": "ผ้าไหมคลุมโครงโลหะ"
+      },
+      "measures": {
+        "en": "Soft-body solver, self-collision and stable draping",
+        "th": "วัดตัวแก้ soft body, การชนกันเองของผ้า และการทรงตัวตอนนิ่ง"
+      },
+      "tags": [
+        "XPBD",
+        "Self-collision",
+        "Cloth shader",
+        "Seeded"
+      ],
+      "output": "cloth_drape.mp4",
+      "duration": 16,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does the cloth pass through the armature?",
+          "Do the folds pass through each other when they stack?",
+          "Does the cloth keep jittering instead of settling, or do the pinned edges tear?"
+        ],
+        "th": [
+          "ผ้าทะลุผ่านโครงโลหะ",
+          "รอยพับซ้อนกันแล้วทะลุเข้าหากัน",
+          "ผ้าสั่นไม่หยุดตอนควรจะนิ่ง หรือขอบที่ปักหมุดถูกดึงจนยืด"
+        ]
+      },
+      "file": "soft-and-fluid/06-cloth-drape.md"
+    },
+    {
+      "id": "07",
+      "slug": "fluid-dambreak",
+      "track": "soft-and-fluid",
+      "source": "Aetox",
+      "title": {
+        "en": "GPU fluid dam break",
+        "th": "น้ำทะลักในถังแก้ว (GPU fluid)"
+      },
+      "measures": {
+        "en": "GPU particle solver inside a volume that has to stay conserved",
+        "th": "วัดตัวแก้ particle บน GPU กับปริมาตรน้ำที่ต้องไม่หาย"
+      },
+      "tags": [
+        "SPH / PBF",
+        "GPU compute",
+        "Refraction",
+        "Whitewater"
+      ],
+      "output": "fluid_dambreak.mp4",
+      "duration": 14,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do particles leak out of the tank or freeze in place?",
+          "Does the water volume shrink because the solver loses mass?",
+          "Do the surface and the refraction show banding or popping?"
+        ],
+        "th": [
+          "อนุภาครั่วออกนอกถังหรือหยุดนิ่งค้าง",
+          "ปริมาตรน้ำหดลงเพราะ solver ทำมวลหาย",
+          "ผิวน้ำและการหักเหเป็นขั้นบันไดหรือกระพริบเป็นช่วง ๆ"
+        ]
+      },
+      "file": "soft-and-fluid/07-fluid-dambreak.md"
+    },
+    {
+      "id": "08",
+      "slug": "rig-walk",
+      "track": "rig",
+      "source": "Aetox",
+      "title": {
+        "en": "Procedural walk cycle",
+        "th": "ท่าเดินจากริกที่สร้างเอง"
+      },
+      "measures": {
+        "en": "Skinning weights, two-bone IK and contact with the ground",
+        "th": "วัดน้ำหนัก skin, IK ขาสองท่อน และการยึดเท้ากับพื้น"
+      },
+      "tags": [
+        "SkinnedMesh",
+        "Two-bone IK",
+        "Verlet",
+        "Loop"
+      ],
+      "output": "rig_walk.mp4",
+      "duration": 12,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the feet slide on the floor while they are planted?",
+          "Does the knee pop or bend backwards?",
+          "Does the mesh sink into the ground, or twist like a candy wrapper at the shoulder?",
+          "Does the last frame match the first one so the clip loops?"
+        ],
+        "th": [
+          "เท้าไถลบนพื้นในจังหวะที่ควรยึดอยู่กับที่",
+          "เข่างอผิดทิศหรือกระตุก (knee pop)",
+          "ตัวละครจมลงพื้น หรือบิดเป็นเกลียวที่ไหล่ (candy wrapper)",
+          "เฟรมสุดท้ายไม่ตรงกับเฟรมแรกจนวนลูปไม่เนียน"
+        ]
+      },
+      "file": "rig/08-rig-walk.md"
+    },
+    {
+      "id": "09",
+      "slug": "storm-sails",
+      "track": "soft-and-fluid",
+      "source": "Gemini",
+      "title": {
+        "en": "Storm galleon with Gerstner ocean and Verlet sails",
+        "th": "เรือใบฝ่าคลื่นยักษ์และธงผ้าสะบัดตามแรงลม"
+      },
+      "measures": {
+        "en": "Verlet cloth coupled to hull buoyancy on a multi-octave Gerstner ocean",
+        "th": "วัดระบบผ้าแบบ Mass-Spring (Verlet) ผสานแรงลอยตัวของเรือบนผิวน้ำ Gerstner"
+      },
+      "tags": [
+        "Gerstner waves",
+        "Verlet cloth",
+        "Buoyancy",
+        "Collision"
+      ],
+      "output": "storm_sails.mp4",
+      "duration": 16,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does the cloth blow up into spikes across the frame from NaN positions?",
+          "Does the cloth pass through the mast?",
+          "Does the hull float rigidly instead of rolling and pitching with the waves?"
+        ],
+        "th": [
+          "ผ้าสะบัดแรงเกินจนค่าพิกัดระเบิดกลายเป็นเส้นแหลมทั้งจอ (NaN / Explosion)",
+          "ผ้าทะลุเสากระโดงเรือ",
+          "เรือลอยแข็งทื่อไม่เอียงตามคลื่น"
+        ]
+      },
+      "file": "soft-and-fluid/09-storm-sails.md"
+    },
+    {
+      "id": "10",
+      "slug": "jelly-course",
+      "track": "soft-and-fluid",
+      "source": "Gemini",
+      "title": {
+        "en": "Soft-body jelly obstacle course",
+        "th": "ก้อนเจลลี่ยืดหยุ่นผ่านด่านลูกกลิ้งและแทรมโพลีน"
+      },
+      "measures": {
+        "en": "A 3D soft body that has to keep its volume while it deforms",
+        "th": "วัดการจำลองวัตถุอ่อนนุ่ม 3 มิติที่ต้องรักษาปริมาตร ไม่ให้ยุบแบนแล้วคืนรูปไม่ได้"
+      },
+      "tags": [
+        "3D mass-spring",
+        "Volume preservation",
+        "Transmission",
+        "Substeps"
+      ],
+      "output": "jelly_course.mp4",
+      "duration": 15,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does the jelly flatten onto the floor and never recover its shape?",
+          "Does the surface jitter non-stop instead of settling?",
+          "Does the jelly pass through the rollers?"
+        ],
+        "th": [
+          "ก้อนเจลลี่แบนติดพื้นแล้วไม่เด้งคืนรูป",
+          "ผิวโมเดลสั่นกระตุกยิก ๆ ตลอดเวลา",
+          "ก้อนเจลลี่ทะลุผ่านลูกกลิ้ง"
+        ]
+      },
+      "file": "soft-and-fluid/10-jelly-course.md"
+    },
+    {
+      "id": "11",
+      "slug": "water-ripples",
+      "track": "soft-and-fluid",
+      "source": "Gemini",
+      "title": {
+        "en": "Zen water garden ripples from a PDE heightfield",
+        "th": "สวนน้ำไผ่กระดกและคลื่นผิวน้ำสมการ PDE"
+      },
+      "measures": {
+        "en": "A 2D wave-equation heightfield solved per substep, with underwater caustics",
+        "th": "วัดการแก้สมการคลื่นผิวน้ำ (2D Wave Equation) บน Grid พร้อมแสงหักเหใต้ผิวน้ำ"
+      },
+      "tags": [
+        "Wave equation",
+        "CFL",
+        "Heightfield",
+        "Caustics"
+      ],
+      "output": "water_ripples.mp4",
+      "duration": 16,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does the wave field break into a black-and-white checkerboard from a CFL-violating timestep?",
+          "Does the bamboo rocker never tip when it fills?",
+          "Is the water surface missing its reflections?"
+        ],
+        "th": [
+          "สมการคลื่นแตกเป็นตารางหมากรุกขาวดำเพราะตั้ง Timestep ผิดเงื่อนไข CFL",
+          "กระบอกไม้ไผ่ไม่กระดกตามจังหวะน้ำเต็ม",
+          "ผิวน้ำไม่มีเงาสะท้อน"
+        ]
+      },
+      "file": "soft-and-fluid/11-water-ripples.md"
+    },
+    {
+      "id": "12",
+      "slug": "fluid-centrifuge",
+      "track": "soft-and-fluid",
+      "source": "Gemini",
+      "title": {
+        "en": "Viscous fluid in a spinning glass tank",
+        "th": "ของเหลวหนืดในตู้กระจกหมุนเหวี่ยง"
+      },
+      "measures": {
+        "en": "A 3D particle fluid solver held inside a container that keeps spinning",
+        "th": "วัดสมการพลศาสตร์ของไหลแบบอนุภาค 3 มิติ (SPH/PBF) บนภาชนะที่หมุนไปมา"
+      },
+      "tags": [
+        "PBF / SPH",
+        "Spatial hash",
+        "Vorticity",
+        "Marching cubes"
+      ],
+      "output": "fluid_centrifuge.mp4",
+      "duration": 15,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do particles tunnel through the glass when the spin gets fast?",
+          "Does the fluid explode because the pressure stiffness is too high?",
+          "Does the water flatten into a puddle instead of holding volume?"
+        ],
+        "th": [
+          "อนุภาคน้ำทะลุกระจกหลุดออกไปนอกตู้ตอนหมุนเร็ว ๆ",
+          "ของเหลวระเบิดกระจายเพราะค่าแรงดัน (Pressure stiffness) สูงเกินไป",
+          "น้ำกองแบนติดพื้นไม่รวมตัวเป็นปริมาตร"
+        ]
+      },
+      "file": "soft-and-fluid/12-fluid-centrifuge.md"
+    },
+    {
+      "id": "13",
+      "slug": "parachute-drop",
+      "track": "soft-and-fluid",
+      "source": "Gemini",
+      "title": {
+        "en": "Parachute deployment with two-way coupling",
+        "th": "ร่มชูชีพกางต้านลมและระบบเชือกดึงน้ำหนัก"
+      },
+      "measures": {
+        "en": "Two-way coupling between aerodynamic cloth and a heavy crate through taut lines",
+        "th": "วัดการเชื่อมโยงแรงสองทาง (Two-Way Coupling) ระหว่างผ้าร่มที่รับแรงต้านอากาศกับกล่องสัมภาระผ่านเส้นเชือกตึง"
+      },
+      "tags": [
+        "Aero drag",
+        "Distance constraints",
+        "Chase camera",
+        "Two-way coupling"
+      ],
+      "output": "parachute_drop.mp4",
+      "duration": 16,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the cords stretch like rubber or detach from the canopy?",
+          "Does the canopy refuse to inflate and collapse into a streamer?",
+          "Does the crate fail to decelerate when the canopy opens?"
+        ],
+        "th": [
+          "เชือกยืดยาวเหมือนหนังยางหรือขาดออกจากตัวร่ม",
+          "ผ้าร่มไม่พองตัวรับลมแต่ลู่เป็นแท่ง",
+          "ตัวกล่องไม่ชะลอความเร็วตอนร่มกางออก"
+        ]
+      },
+      "file": "soft-and-fluid/13-parachute-drop.md"
+    },
+    {
+      "id": "14",
+      "slug": "gothic-cathedral",
+      "track": "architecture",
+      "source": "Gemini",
+      "title": {
+        "en": "Gothic cathedral assembly",
+        "th": "วิหารโกธิคผุดขึ้นจากความว่างเปล่า"
+      },
+      "measures": {
+        "en": "Architectural geometry - piers, pointed arches, flying buttresses, rose window - with a build order from base to spire",
+        "th": "วัดความแม่นยำเรขาคณิตสถาปัตยกรรม (เสา วงโค้งปลายแหลม ค้ำยันลอย หน้าต่างกุหลาบ) และคิวประกอบจากฐานสู่ยอด"
+      },
+      "tags": [
+        "Procedural geometry",
+        "Staggered build",
+        "Stained glass",
+        "Staging"
+      ],
+      "output": "gothic_cathedral.mp4",
+      "duration": 18,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the flying buttresses hang in the air without ever meeting the piers?",
+          "Is the build order wrong, with the roof arriving before the columns?",
+          "Does the rose window overlap itself and flicker with Z-fighting?"
+        ],
+        "th": [
+          "ค้ำยันลอย (Flying buttresses) ลอยค้างกลางอากาศไม่ชนกับผนังเสา",
+          "คิวประกอบชิ้นส่วนผิดลำดับ (หลังคามาก่อนเสา)",
+          "หน้าต่างกุหลาบซ้อนทับจนเกิดรอยกระพริบ (Z-fighting)"
+        ]
+      },
+      "file": "architecture/14-gothic-cathedral.md"
+    },
+    {
+      "id": "15",
+      "slug": "puzzle-box",
+      "track": "architecture",
+      "source": "Gemini",
+      "title": {
+        "en": "Transforming steampunk puzzle box",
+        "th": "กล่องกลไกปริศนาแปลงร่างสไตล์ Steampunk"
+      },
+      "measures": {
+        "en": "Parent-child hierarchy, pivot placement, and a multi-layer unfolding with no plate intersecting another",
+        "th": "วัดลำดับชั้น Parent-Child (THREE.Group), จุดหมุน (Pivot) และการเปิดกลไกหลายชั้นโดยไม่ให้แผ่นโลหะชนกัน"
+      },
+      "tags": [
+        "THREE.Group",
+        "Pivots",
+        "PBR wood",
+        "Macro camera"
+      ],
+      "output": "puzzle_box.mp4",
+      "duration": 16,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does the lid pivot sit in the middle of the plate instead of on the hinge edge, so the plate swings through the box?",
+          "Do the inner gear plates collide with or pass through the outer mahogany panels?"
+        ],
+        "th": [
+          "จุดหมุน (Pivot) ของฝาพับอยู่ตรงกลางแผ่นแทนที่จะอยู่ที่ขอบบานพับ ทำให้แผ่นโลหะหมุนควงทะลุตัวกล่อง",
+          "แผ่นเกียร์ชั้นในกางออกแล้วชนหรือทะลุแผงไม้ชั้นนอก"
+        ]
+      },
+      "file": "architecture/15-puzzle-box.md"
+    },
+    {
+      "id": "16",
+      "slug": "suspension-bridge",
+      "track": "architecture",
+      "source": "Gemini",
+      "title": {
+        "en": "Parametric suspension bridge assembly",
+        "th": "สะพานแขวนโครงถักและการคำนวณสายเคเบิลพาราโบลา"
+      },
+      "measures": {
+        "en": "Joining a parabolic cable curve to an arched deck with hundreds of vertical hangers",
+        "th": "วัดคณิตศาสตร์การเชื่อมจุดระหว่างเส้นโค้งพาราโบลาของสายเคเบิลกับความโค้งของพื้นสะพานด้วยลวดสลิงนับร้อยเส้น"
+      },
+      "tags": [
+        "Catenary math",
+        "Sweep",
+        "Warren truss",
+        "Staged build"
+      ],
+      "output": "suspension_bridge.mp4",
+      "duration": 17,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the vertical hangers run past the bridge deck and hang below it?",
+          "Do the hangers float free instead of reaching the main cable above?"
+        ],
+        "th": [
+          "ลวดสลิงแนวตั้ง (Suspender cables) ยาวทะลุพื้นสะพานลงไปด้านล่าง",
+          "ลวดสลิงลอยไม่แตะสายเคเบิลหลักด้านบน"
+        ]
+      },
+      "file": "architecture/16-suspension-bridge.md"
+    },
+    {
+      "id": "17",
+      "slug": "orbital-station",
+      "track": "architecture",
+      "source": "Gemini",
+      "title": {
+        "en": "Orbital station assembly and docking",
+        "th": "สถานีอวกาศวงแหวนประกอบร่างในวงโคจร"
+      },
+      "measures": {
+        "en": "Zero-g motion, accordion solar-array kinematics, and docking with a robotic arm",
+        "th": "วัดการเคลื่อนที่ในสภาวะไร้น้ำหนัก การกางแผงโซลาร์แบบหีบเพลง และการเชื่อมต่อโมดูลด้วยแขนกล"
+      },
+      "tags": [
+        "RCS particles",
+        "Robot arm",
+        "Accordion hinges",
+        "Earthshine"
+      ],
+      "output": "orbital_station.mp4",
+      "duration": 18,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Do the solar wings unfold the wrong way and fold over themselves?",
+          "Does the ring spin around an off-centre pivot?",
+          "Do the modules collide before they lock?"
+        ],
+        "th": [
+          "แผงโซลาร์เซลล์กางออกผิดทิศทางจนพับซ้อนทับกันเอง",
+          "วงแหวนหมุนรอบแกนที่เบี้ยว (Off-center pivot)",
+          "โมดูลวิ่งชนกันก่อนล็อก"
+        ]
+      },
+      "file": "architecture/17-orbital-station.md"
+    },
+    {
+      "id": "18",
+      "slug": "impossible-maze",
+      "track": "architecture",
+      "source": "Gemini",
+      "title": {
+        "en": "Impossible Escher architecture and gravity shift",
+        "th": "เขาวงกตสถาปัตยกรรมที่เป็นไปไม่ได้สไตล์ Escher"
+      },
+      "measures": {
+        "en": "Multi-planar geometry, with the camera's gravity vector rolling over without breaking",
+        "th": "วัดเรขาคณิตต่างระนาบ (Multi-planar) และการหมุนเวกเตอร์แรงโน้มถ่วงของตัวละครกับกล้องให้สอดประสาน"
+      },
+      "tags": [
+        "Quaternion slerp",
+        "Gravity shift",
+        "AO",
+        "Long shadows"
+      ],
+      "output": "impossible_maze.mp4",
+      "duration": 16,
+      "fps": 30,
+      "resolution": "1920x1080",
+      "checks": {
+        "en": [
+          "Does the camera hit gimbal lock on the 90-degree roll and snap upside down?",
+          "Does the walker sink through the stairs when the gravity plane changes?"
+        ],
+        "th": [
+          "เกิดอาการ Gimbal Lock ตอนหมุนกล้อง 90 องศา ทำให้ภาพตีลังกากระตุก",
+          "วัตถุเดินจมทะลุขั้นบันไดเมื่อเปลี่ยนระนาบแรงโน้มถ่วง"
+        ]
+      },
+      "file": "architecture/18-impossible-maze.md"
+    }
+  ]
+}

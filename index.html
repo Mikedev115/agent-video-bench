@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Video Bench — พรอมป์ที่บังคับให้เอเจนต์เรนเดอร์วิดีโอจริง</title>
+<meta name="description" content="แปดพรอมป์สำหรับสั่งเอเจนต์สร้างวิดีโอ 3 มิติแบบ procedural ด้วย Three.js + headless Chromium + FFmpeg พร้อมจุดจับผิดที่บอกว่าให้ตรวจอะไรในไฟล์ MP4">
+<meta name="theme-color" content="#0a0b0d">
+<meta property="og:title" content="Agent Video Bench">
+<meta property="og:description" content="Prompts that force a coding agent to render real deterministic 3D video.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b0d'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23f5a524' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23f5a524'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#bench">ข้ามไปที่รายการพรอมป์</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="brand-name">agent-video-bench</span>
+    </a>
+    <div class="top-nav">
+      <a class="gh" href="https://github.com/Mikedev115/agent-video-bench" target="_blank" rel="noopener">
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+      <div class="lang" role="group" aria-label="ภาษา / language">
+        <button type="button" data-lang="th" aria-pressed="true">TH</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <p class="eyebrow" data-i18n="eyebrow">8 พรอมป์ · เรนเดอร์จริง · ตรวจได้ทีละเฟรม</p>
+    <h1 data-i18n="h1">พรอมป์ที่บังคับให้เอเจนต์<br>เรนเดอร์วิดีโอจริง</h1>
+    <p class="lede" data-i18n="lede">
+      แปดโจทย์ แต่ละตัววัดคนละทักษะ — อัตราทดเฟือง ฟิสิกส์ต่อเนื่อง SDF raymarching เมืองทั้งเมือง
+      ผ้า ของไหล ริก และเสียงที่ต้องซิงก์กับภาพ ทุกโจทย์บังคับผลลัพธ์เป็นไฟล์ MP4 ที่เปิดตรวจทีละเฟรมได้
+      พร้อม “จุดจับผิด” บอกไว้ว่าให้ไปดูอะไรเพื่อจับงานที่ดูดีแต่ผิดจริง
+    </p>
+    <div class="framebar" aria-hidden="true"><span class="sweep"></span></div>
+    <ul class="stats" data-i18n-list="stats">
+      <li><b>08</b> พรอมป์</li>
+      <li><b>07</b> สายทักษะ</li>
+      <li><b>30</b> FPS ล็อกตายตัว</li>
+      <li><b>0</b> แอสเซ็ตภายนอก</li>
+    </ul>
+  </section>
+
+  <section class="how wrap" aria-labelledby="how-h">
+    <h2 id="how-h" class="rule-h" data-i18n="howH">วิธีใช้</h2>
+    <ol class="steps" data-i18n-list="steps">
+      <li><span class="n">1</span><p><b>เลือกโจทย์</b> การ์ดแต่ละใบบอกไฟล์ผลลัพธ์ ความยาว และสิ่งที่ถูกวัด</p></li>
+      <li><span class="n">2</span><p><b>คัดลอกทั้งพรอมป์</b> วางให้เอเจนต์ที่รันโค้ดได้ (มี Node, Chromium, FFmpeg)</p></li>
+      <li><span class="n">3</span><p><b>ตรวจตามจุดจับผิด</b> เปิด MP4 กับเฟรมที่มันอ้างว่าเทสต์ ไม่ผ่านให้ตีกลับพร้อมระบุข้อ</p></li>
+    </ol>
+  </section>
+
+  <section class="bench wrap" id="bench" aria-labelledby="bench-h">
+    <div class="bench-head">
+      <h2 id="bench-h" class="rule-h" data-i18n="benchH">พรอมป์ทั้งชุด</h2>
+      <button type="button" class="btn btn-ghost" id="copy-all" data-i18n="copyAll">คัดลอกทั้งชุด</button>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="กรองตามสายทักษะ"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="cards" id="cards"></div>
+    <p class="load-error" id="load-error" hidden></p>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <p>
+    <span data-i18n="footLeft">พรอมป์ 01–05 มาจาก Gemini (ส่งต่อโดย Mike) · 06–08 เขียนเพิ่มโดย Aetox</span>
+    <span class="dot" aria-hidden="true">·</span>
+    <a href="https://github.com/Mikedev115/agent-video-bench/blob/main/prompts/index.json" target="_blank" rel="noopener">prompts/index.json</a>
+    <span class="dot" aria-hidden="true">·</span>
+    <span data-i18n="footRight">MIT License</span>
+  </p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
