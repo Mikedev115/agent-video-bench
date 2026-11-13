@@ -22,7 +22,7 @@
       copyAll: 'คัดลอกทั้งชุด',
       copy: 'คัดลอก',
       copied: 'คัดลอกแล้ว',
-      expand: 'ขยาย',
+      expand: 'อ่านเต็ม',
       collapse: 'ย่อ',
       output: 'ไฟล์',
       length: 'ความยาว',
@@ -61,7 +61,7 @@
       copyAll: 'Copy all',
       copy: 'Copy',
       copied: 'Copied',
-      expand: 'Expand',
+      expand: 'Read full',
       collapse: 'Collapse',
       output: 'Output',
       length: 'Length',
@@ -149,9 +149,12 @@
       const list = t(el.dataset.i18nList);
       el.innerHTML = list.map((x, i) => `<li>${el.tagName === 'OL' ? '<span class="n">' + (i + 1) + '</span>' : ''}<p>${x}</p></li>`).join('');
     });
-    document.querySelectorAll('.lang button').forEach((b) => {
-      b.setAttribute('aria-pressed', String(b.dataset.lang === state.lang));
-    });
+    const toggle = $('#lang-toggle');
+    if (toggle) {
+      toggle.textContent = state.lang === 'th' ? 'EN' : 'ไทย';
+      toggle.setAttribute('lang', state.lang === 'th' ? 'en' : 'th');
+      toggle.setAttribute('aria-label', state.lang === 'th' ? 'Switch to English' : 'เปลี่ยนเป็นภาษาไทย');
+    }
   }
 
   function renderFilters() {
@@ -172,22 +175,23 @@
   }
 
   function cardHTML(item) {
-    const specs = [
-      [t('output'), item.output],
-      [t('length'), item.duration + 's'],
-      [t('format'), item.resolution.replace('x', '×') + ' · ' + item.fps + ' fps']
-    ].map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('');
+    const meta = [
+      `<code>${esc(item.output)}</code>`,
+      item.duration + ' s',
+      item.resolution.replace('x', '×'),
+      item.fps + ' fps'
+    ].join('<span class="sep">·</span>');
     const tags = item.tags.map((x) => `<span class="tag">${esc(x)}</span>`).join('');
     const checks = item.checks[state.lang].map((x) => `<li>${esc(x)}</li>`).join('');
     return `
       <div class="rail">
         <a class="num" href="#p-${item.id}" aria-label="prompt ${item.id}">${item.id}</a>
-        <dl class="specs">${specs}</dl>
         <span class="src">${esc(item.source)}</span>
       </div>
       <div class="card-body">
         <h2>${esc(item.title[state.lang])}</h2>
         <p class="measures">${esc(item.measures[state.lang])}</p>
+        <p class="meta">${meta}</p>
         <div class="tags">${tags}</div>
         <div class="prompt is-clamped" data-id="${item.id}">
           <div class="prompt-bar">
@@ -321,15 +325,12 @@
     state.items.forEach((item) => textFor(item).catch(() => {}));
   }
 
-  document.querySelectorAll('.lang button').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      if (state.lang === btn.dataset.lang) return;
-      state.lang = btn.dataset.lang;
-      try { localStorage.setItem('avb-lang', state.lang); } catch { /* storage blocked */ }
-      chrome();
-      renderFilters();
-      renderCards();
-    });
+  $('#lang-toggle').addEventListener('click', () => {
+    state.lang = state.lang === 'th' ? 'en' : 'th';
+    try { localStorage.setItem('avb-lang', state.lang); } catch { /* storage blocked */ }
+    chrome();
+    renderFilters();
+    renderCards();
   });
 
   $('#copy-all').addEventListener('click', async () => {

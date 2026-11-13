@@ -495,14 +495,14 @@
         "th": "วิหารโกธิคผุดขึ้นจากความว่างเปล่า"
       },
       "measures": {
-        "en": "Architectural geometry - piers, pointed arches, flying buttresses, rose window - with a build order from base to spire",
-        "th": "วัดความแม่นยำเรขาคณิตสถาปัตยกรรม (เสา วงโค้งปลายแหลม ค้ำยันลอย หน้าต่างกุหลาบ) และคิวประกอบจากฐานสู่ยอด"
+        "en": "Architectural geometry and build order, gated by determinism, temporal and ffprobe checks",
+        "th": "วัดความแม่นยำเรขาคณิตสถาปัตยกรรม (เสา วงโค้งปลายแหลม ค้ำยันลอย หน้าต่างกุหลาบ) คิวประกอบจากฐานสู่ยอด และ gate ที่ต้องผ่านก่อนส่ง"
       },
       "tags": [
         "Procedural geometry",
         "Staggered build",
         "Stained glass",
-        "Staging"
+        "Determinism gates"
       ],
       "output": "gothic_cathedral.mp4",
       "duration": 18,
@@ -510,14 +510,14 @@
       "resolution": "1920x1080",
       "checks": {
         "en": [
-          "Do the flying buttresses hang in the air without ever meeting the piers?",
+          "Do the flying buttresses hang in the air without touching the piers, or miss contact by more than 10 mm?",
           "Is the build order wrong, with the roof arriving before the columns?",
-          "Does the rose window overlap itself and flicker with Z-fighting?"
+          "Does the rose window overlap and flicker with Z-fighting, or is the facade asymmetric?"
         ],
         "th": [
-          "ค้ำยันลอย (Flying buttresses) ลอยค้างกลางอากาศไม่ชนกับผนังเสา",
-          "คิวประกอบชิ้นส่วนผิดลำดับ (หลังคามาก่อนเสา)",
-          "หน้าต่างกุหลาบซ้อนทับจนเกิดรอยกระพริบ (Z-fighting)"
+          "ค้ำยันลอยค้างกลางอากาศไม่แตะผนังเสา หรือระยะสัมผัสเกิน 10 มม.",
+          "หลังคามาก่อนเสา หรือลำดับประกอบข้ามขั้น",
+          "หน้าต่างกุหลาบซ้อนทับจนกระพริบ (Z-fighting) หรือ facade ไม่สมมาตร"
         ]
       },
       "file": "architecture/14-gothic-cathedral.md"
